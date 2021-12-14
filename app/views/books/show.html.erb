@@ -36,8 +36,8 @@
 <ul>
   <% @book.book_review.each do |book_review|%>
    <li><%= book_review.review %>
-     (<i><%= book_review.user_id %></i>)</li>
-<% end %>
+     (<i><%= book_review.user.name if book_review.user%></i>)</li>
+   <% end %>
 </ul>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
